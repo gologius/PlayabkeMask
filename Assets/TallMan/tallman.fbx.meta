@@ -1,0 +1,245 @@
+fileFormatVersion: 2
+guid: e14f663428ee41e4cb9bb638e3bccde5
+timeCreated: 1511147955
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: BODY
+    100002: Chest
+    100004: EYE
+    100006: finger_1
+    100008: finger_2
+    100010: finger_3
+    100012: finger_4
+    100014: finger_5
+    100016: FOOT
+    100018: HEAD
+    100020: Head
+    100022: Head_end
+    100024: Hips
+    100026: LeftFoot
+    100028: LeftHand
+    100030: LeftIndexProximal
+    100032: LeftIndexProximal_end
+    100034: LeftLittleProximal
+    100036: LeftLittleProximal_end
+    100038: LeftLowerArm
+    100040: LeftLowerLeg
+    100042: LeftMiddleProximal
+    100044: LeftMiddleProximal_end
+    100046: LeftRingProximal
+    100048: LeftRingProximal_end
+    100050: LeftShoulder
+    100052: LeftShoulder_Dummy
+    100054: LeftThumbProximal
+    100056: LeftThumbProximal_end
+    100058: LeftToeBase
+    100060: LeftToeBase_end
+    100062: LeftUpperArm
+    100064: LeftUpperLeg
+    100066: LOWER_ARM
+    100068: LOWER_LEG
+    100070: Neck
+    100072: RightFoot
+    100074: RightHand
+    100076: RightIndexProximal
+    100078: RightIndexProximal_end
+    100080: RightLittleProximal
+    100082: RightLittleProximal_end
+    100084: RightLowerArm
+    100086: RightLowerLeg
+    100088: RightMiddleProximal
+    100090: RightMiddleProximal_end
+    100092: RightRingProximal
+    100094: RightRingProximal_end
+    100096: RightShoulder
+    100098: RightThumbProximal
+    100100: RightThumbProximal_end
+    100102: RightToeBase
+    100104: RightToeBase_end
+    100106: RightUpperArm
+    100108: RightUpperLeg
+    100110: SHOULDER
+    100112: Spine
+    100114: //RootNode
+    100116: UPPER_ARM
+    100118: UPPER_LEG
+    400000: BODY
+    400002: Chest
+    400004: EYE
+    400006: finger_1
+    400008: finger_2
+    400010: finger_3
+    400012: finger_4
+    400014: finger_5
+    400016: FOOT
+    400018: HEAD
+    400020: Head
+    400022: Head_end
+    400024: Hips
+    400026: LeftFoot
+    400028: LeftHand
+    400030: LeftIndexProximal
+    400032: LeftIndexProximal_end
+    400034: LeftLittleProximal
+    400036: LeftLittleProximal_end
+    400038: LeftLowerArm
+    400040: LeftLowerLeg
+    400042: LeftMiddleProximal
+    400044: LeftMiddleProximal_end
+    400046: LeftRingProximal
+    400048: LeftRingProximal_end
+    400050: LeftShoulder
+    400052: LeftShoulder_Dummy
+    400054: LeftThumbProximal
+    400056: LeftThumbProximal_end
+    400058: LeftToeBase
+    400060: LeftToeBase_end
+    400062: LeftUpperArm
+    400064: LeftUpperLeg
+    400066: LOWER_ARM
+    400068: LOWER_LEG
+    400070: Neck
+    400072: RightFoot
+    400074: RightHand
+    400076: RightIndexProximal
+    400078: RightIndexProximal_end
+    400080: RightLittleProximal
+    400082: RightLittleProximal_end
+    400084: RightLowerArm
+    400086: RightLowerLeg
+    400088: RightMiddleProximal
+    400090: RightMiddleProximal_end
+    400092: RightRingProximal
+    400094: RightRingProximal_end
+    400096: RightShoulder
+    400098: RightThumbProximal
+    400100: RightThumbProximal_end
+    400102: RightToeBase
+    400104: RightToeBase_end
+    400106: RightUpperArm
+    400108: RightUpperLeg
+    400110: SHOULDER
+    400112: Spine
+    400114: //RootNode
+    400116: UPPER_ARM
+    400118: UPPER_LEG
+    4300000: HEAD
+    4300002: EYE
+    4300004: BODY
+    4300006: SHOULDER
+    4300008: UPPER_ARM
+    4300010: LOWER_ARM
+    4300012: UPPER_LEG
+    4300014: LOWER_LEG
+    4300016: FOOT
+    4300018: finger_1
+    4300020: finger_2
+    4300022: finger_3
+    4300024: finger_4
+    4300026: finger_5
+    7400000: Default
+    7400002: TallMan_Idle
+    7400004: TallMan_Run
+    7400006: TallMan_Float
+    7400008: TallMan_Fighter
+    7400010: TallMan_Sasu
+    7400012: TallMan_BigShot
+    7400014: TallMan_Boost
+    7400016: TallMan_DownRecover
+    7400018: TallMan_Down
+    7400020: TallMan_Damage
+    7400022: TallMan_Jump
+    7400024: TallMan_Walk
+    9500000: //RootNode
+    13700000: BODY
+    13700002: EYE
+    13700004: finger_1
+    13700006: finger_2
+    13700008: finger_3
+    13700010: finger_4
+    13700012: finger_5
+    13700014: FOOT
+    13700016: HEAD
+    13700018: LOWER_ARM
+    13700020: LOWER_LEG
+    13700022: SHOULDER
+    13700024: UPPER_ARM
+    13700026: UPPER_LEG
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Head' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

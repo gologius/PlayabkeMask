@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: GeneralUpperBody
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: BODY
+    m_Weight: 1
+  - m_Path: EYE
+    m_Weight: 1
+  - m_Path: finger_1
+    m_Weight: 1
+  - m_Path: finger_2
+    m_Weight: 1
+  - m_Path: finger_3
+    m_Weight: 1
+  - m_Path: finger_4
+    m_Weight: 1
+  - m_Path: finger_5
+    m_Weight: 1
+  - m_Path: HEAD
+    m_Weight: 1
+  - m_Path: Hips
+    m_Weight: 0
+  - m_Path: Hips/LeftUpperLeg
+    m_Weight: 0
+  - m_Path: Hips/LeftUpperLeg/LeftLowerLeg
+    m_Weight: 0
+  - m_Path: Hips/LeftUpperLeg/LeftLowerLeg/LeftFoot
+    m_Weight: 0
+  - m_Path: Hips/LeftUpperLeg/LeftLowerLeg/LeftFoot/LeftToeBase
+    m_Weight: 0
+  - m_Path: Hips/LeftUpperLeg/LeftLowerLeg/LeftFoot/LeftToeBase/LeftToeBase_end
+    m_Weight: 0
+  - m_Path: Hips/RightUpperLeg
+    m_Weight: 0
+  - m_Path: Hips/RightUpperLeg/RightLowerLeg
+    m_Weight: 0
+  - m_Path: Hips/RightUpperLeg/RightLowerLeg/RightFoot
+    m_Weight: 0
+  - m_Path: Hips/RightUpperLeg/RightLowerLeg/RightFoot/RightToeBase
+    m_Weight: 0
+  - m_Path: Hips/RightUpperLeg/RightLowerLeg/RightFoot/RightToeBase/RightToeBase_end
+    m_Weight: 0
+  - m_Path: Hips/Spine
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand/LeftIndexProximal
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand/LeftIndexProximal/LeftIndexProximal_end
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand/LeftLittleProximal
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand/LeftLittleProximal/LeftLittleProximal_end
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand/LeftMiddleProximal
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand/LeftMiddleProximal/LeftMiddleProximal_end
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand/LeftRingProximal
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand/LeftRingProximal/LeftRingProximal_end
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand/LeftThumbProximal
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/LeftShoulder/LeftUpperArm/LeftLowerArm/LeftHand/LeftThumbProximal/LeftThumbProximal_end
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/Neck
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/Neck/Head
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/Neck/Head/Head_end
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand/RightIndexProximal
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand/RightIndexProximal/RightIndexProximal_end
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand/RightLittleProximal
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand/RightLittleProximal/RightLittleProximal_end
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand/RightMiddleProximal
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand/RightMiddleProximal/RightMiddleProximal_end
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand/RightRingProximal
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand/RightRingProximal/RightRingProximal_end
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand/RightThumbProximal
+    m_Weight: 1
+  - m_Path: Hips/Spine/Chest/LeftShoulder_Dummy/RightShoulder/RightUpperArm/RightLowerArm/RightHand/RightThumbProximal/RightThumbProximal_end
+    m_Weight: 1
+  - m_Path: SHOULDER
+    m_Weight: 1
+  - m_Path: SHOULDER/UPPER_ARM
+    m_Weight: 1
+  - m_Path: SHOULDER/UPPER_ARM/LOWER_ARM
+    m_Weight: 1
+  - m_Path: UPPER_LEG
+    m_Weight: 1
+  - m_Path: UPPER_LEG/LOWER_LEG
+    m_Weight: 1
+  - m_Path: UPPER_LEG/LOWER_LEG/FOOT
+    m_Weight: 1
