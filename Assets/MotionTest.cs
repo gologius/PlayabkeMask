@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MotionTest : MonoBehaviour {
+public class MotionTest : MonoBehaviour
+{
 
     public Text upperMotionNameText;
     public Text lowerMotionNameText;
+
+    public List<AnimationClip> clips = new List<AnimationClip>();
 
     private MotionPlayer motionPlayer; //GetComponent()による自動取得
     private int upperCounter = 0;
@@ -21,7 +24,7 @@ public class MotionTest : MonoBehaviour {
     public void changeUpperMotion()
     {
         upperCounter++;
-        upperCounter %= motionPlayer.clips.Count;
+        upperCounter %= clips.Count;
 
         playMotion();
     }
@@ -29,17 +32,17 @@ public class MotionTest : MonoBehaviour {
     public void changeLowerMotion()
     {
         lowerCounter++;
-        lowerCounter %= motionPlayer.clips.Count;
+        lowerCounter %= clips.Count;
 
         playMotion();
     }
 
-
     private void playMotion()
     {
-        GetComponent<MotionPlayer>().playFromID(upperCounter, lowerCounter);
-        
-        upperMotionNameText.text = motionPlayer.clips[upperCounter].name;
-        lowerMotionNameText.text = motionPlayer.clips[lowerCounter].name;
+        motionPlayer.play(clips[upperCounter], 1, loop: false);
+        motionPlayer.play(clips[lowerCounter], 0, loop: false);
+
+        upperMotionNameText.text = clips[upperCounter].name;
+        lowerMotionNameText.text = clips[lowerCounter].name;
     }
 }

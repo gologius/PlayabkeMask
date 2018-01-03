@@ -7,60 +7,96 @@ using UnityEngine.Animations;
 
 public class MotionPlayer : MonoBehaviour
 {
-    public List<AnimationClip> clips = new List<AnimationClip>();
+    private class Converter
+    {
+        public bool loop = false;
+        public AnimationClipPlayable beforePlayable;
+        public AnimationClipPlayable nowPlayable;
+        public AnimationMixerPlayable mixer;
+        private PlayableGraph graph;
 
-    [Header("<マスク設定>")]
-    [SerializeField, Tooltip("上半身にモーション適用するためのマスク")]
-    private AvatarMask upperBodyMask;
-    [SerializeField, Tooltip("下半身にモーション適用するためのマスク")]
-    private AvatarMask lowerBodyMask;
-    
-    private Animator animator; //GetComponent()による自動取得
-  
-    private PlayableGraph graph;
-    private AnimationClipPlayable beforeUpperPlayable;
-    private AnimationClipPlayable beforeLowerPlayable;
-    private AnimationClipPlayable nowUpperPlayable;
-    private AnimationClipPlayable nowLowerPlayable;
-    private AnimationLayerMixerPlayable allLayerMixer;
-    private AnimationLayerMixerPlayable upperLayerMixer;
-    private AnimationLayerMixerPlayable lowerLayerMixer;
+        public Converter(PlayableGraph graph)
+        {
+            this.beforePlayable = AnimationClipPlayable.Create(graph, null);
+            this.mixer = AnimationMixerPlayable.Create(graph, 2);
+            this.graph = graph;
+        }
+
+        //AnimationClipの切り替え
+        public void reconnect(AnimationClip clip)
+        {
+            //切断
+            graph.Disconnect(mixer, 0);
+            graph.Disconnect(mixer, 1);
+
+            if (beforePlayable.IsValid())
+                beforePlayable.Destroy();
+
+            beforePlayable = nowPlayable;
+            nowPlayable = AnimationClipPlayable.Create(graph, clip);
+
+            //再接続
+            mixer.ConnectInput(1, beforePlayable, 0);
+            mixer.ConnectInput(0, nowPlayable, 0);
+        }
+
+        //Animationの再生が終了しているか
+        public bool isPlayFinish()
+        {
+            if (nowPlayable.IsValid() == false)
+                return false;
+
+            //予定されている再生時間を超えていれば、再生終了とみなす
+            if (nowPlayable.GetTime() >= nowPlayable.GetAnimationClip().length)
+            {
+                return true;
+            }
+
+            return false;
+        }
+    }
+
+    [SerializeField]
+    private AvatarMask upperMask;
+
+    [Tooltip("Motionが完全に遷移するまでにかかる時間")]
+    public float fadeDuration = 0.2f;
+
+    //Playable API
+    private List<Converter> converters = new List<Converter>();
+    private AnimationLayerMixerPlayable layerMixer;
     private AnimationPlayableOutput output;
-  
+    private PlayableGraph graph;
+
+    //GetComponent()による自動取得
+    private Animator animator;
+
     //============================================================================================================
 
     void Awake()
     {
-        graph = PlayableGraph.Create();
-    }
-
-    void Start()
-    {
         animator = this.GetComponent<Animator>();
-       
-        upperLayerMixer = AnimationLayerMixerPlayable.Create(graph, 2);
-        lowerLayerMixer = AnimationLayerMixerPlayable.Create(graph, 2);
-        allLayerMixer = AnimationLayerMixerPlayable.Create(graph, 2);
-        upperLayerMixer.SetLayerMaskFromAvatarMask(0, upperBodyMask);
-        lowerLayerMixer.SetLayerMaskFromAvatarMask(0, lowerBodyMask);
+
+        //PlayableAPIの準備
+        graph = PlayableGraph.Create();
+        converters.Add(new Converter(graph));
+        converters.Add(new Converter(graph));
+        layerMixer = AnimationLayerMixerPlayable.Create(graph, 2);
+        layerMixer.SetLayerMaskFromAvatarMask(1, upperMask);
         output = AnimationPlayableOutput.Create(graph, "output", animator);
+        graph.Play();
     }
 
     void Update()
     {
         //アニメーションが終了しているか調べる
-        if (nowUpperPlayable.IsValid())
+        foreach (var conv in converters)
         {
-            if (nowUpperPlayable.GetTime() >= nowUpperPlayable.GetAnimationClip().length)
-                onFinishMotion(nowUpperPlayable);
+            if (conv.isPlayFinish() && conv.loop)
+            {
+                conv.nowPlayable.SetTime(0f); //時間を巻き戻しループ再生
+            }
         }
-
-        if (nowLowerPlayable.IsValid())
-        {
-            if (nowLowerPlayable.GetTime() >= nowLowerPlayable.GetAnimationClip().length)
-                onFinishMotion(nowLowerPlayable);
-        }
-
     }
 
     void OnDestroy()
@@ -69,48 +105,22 @@ public class MotionPlayer : MonoBehaviour
     }
 
     //============================================================================================================
-    //Animation切り替え
-    
-    public void playFromID(int upperID, int lowerID)
-    {
-        play(clips[upperID], clips[lowerID]);
-    }
 
-    private void play(AnimationClip upperClip, AnimationClip lowerClip)
+    public void play(AnimationClip clip, int layer, bool loop)
     {
+        Converter conv = converters[layer];
+        conv.loop = loop;
+
         //切断
-        graph.Disconnect(upperLayerMixer, 0);
-        graph.Disconnect(upperLayerMixer, 1);
-        graph.Disconnect(lowerLayerMixer, 0);
-        graph.Disconnect(lowerLayerMixer, 1);
-        graph.Disconnect(allLayerMixer, 0);
-        graph.Disconnect(allLayerMixer, 1);
-
-        if (beforeUpperPlayable.IsValid())
-            beforeUpperPlayable.Destroy();
-        if (beforeLowerPlayable.IsValid())
-            beforeLowerPlayable.Destroy();
-
-        //更新
-        beforeUpperPlayable = nowUpperPlayable;
-        beforeLowerPlayable = nowLowerPlayable;
-        nowUpperPlayable = AnimationClipPlayable.Create(graph, upperClip);
-        nowLowerPlayable = AnimationClipPlayable.Create(graph, lowerClip);
+        graph.Disconnect(layerMixer, layer);
 
         //再接続
-        upperLayerMixer.ConnectInput(1, beforeUpperPlayable, 0);
-        upperLayerMixer.ConnectInput(0, nowUpperPlayable, 0);
-        lowerLayerMixer.ConnectInput(1, beforeLowerPlayable, 0);
-        lowerLayerMixer.ConnectInput(0, nowLowerPlayable, 0);
+        conv.reconnect(clip);
+        layerMixer.ConnectInput(layer, conv.mixer, 0);
 
-        allLayerMixer.ConnectInput(0, upperLayerMixer, 0);
-        allLayerMixer.ConnectInput(1, lowerLayerMixer, 0);
-
-        output.SetSourcePlayable(allLayerMixer);
-
-        //再生
-        graph.Play();
-        StartCoroutine(fadeCoroutine(0.2f));
+        //出力
+        output.SetSourcePlayable(layerMixer);
+        StartCoroutine(fadeCoroutine(fadeDuration, conv));
     }
 
     /// <summary>
@@ -120,7 +130,7 @@ public class MotionPlayer : MonoBehaviour
     /// </summary>
     /// <param name="duration">次のAnimationに「完全に」遷移する時間</param>
     /// <returns></returns>
-    IEnumerator fadeCoroutine(float duration)
+    IEnumerator fadeCoroutine(float duration, Converter conv)
     {
         // 指定時間でアニメーションをブレンド
         float waitTime = Time.timeSinceLevelLoad + duration;
@@ -129,26 +139,17 @@ public class MotionPlayer : MonoBehaviour
             var diff = waitTime - Time.timeSinceLevelLoad;
             if (diff <= 0)
             {
-                upperLayerMixer.SetInputWeight(1, 0);
-                upperLayerMixer.SetInputWeight(0, 1);
-                lowerLayerMixer.SetInputWeight(1, 0);
-                lowerLayerMixer.SetInputWeight(0, 1);
+                conv.mixer.SetInputWeight(1, 0);
+                conv.mixer.SetInputWeight(0, 1);
                 return false;
             }
             else
             {
                 var rate = Mathf.Clamp01(diff / duration);
-                upperLayerMixer.SetInputWeight(1, rate);
-                upperLayerMixer.SetInputWeight(0, 1 - rate);
-                lowerLayerMixer.SetInputWeight(1, rate);
-                lowerLayerMixer.SetInputWeight(0, 1 - rate);
+                conv.mixer.SetInputWeight(1, rate);
+                conv.mixer.SetInputWeight(0, 1 - rate);
                 return true;
             }
         });
-    }
-
-    void onFinishMotion(AnimationClipPlayable nowPlayable)
-    {
-        nowPlayable.SetTime(0f); //ループさせるために時間を巻き戻す
     }
 }
