@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.015686275, g: 0.81568635, b: 0.8196079, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -750,7 +750,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upperMotionNameText: {fileID: 2063757052}
   lowerMotionNameText: {fileID: 1310921527}
-  clips: []
+  clips:
+  - {fileID: 7400006, guid: e14f663428ee41e4cb9bb638e3bccde5, type: 3}
+  - {fileID: 7400010, guid: e14f663428ee41e4cb9bb638e3bccde5, type: 3}
+  - {fileID: 7400004, guid: e14f663428ee41e4cb9bb638e3bccde5, type: 3}
+  - {fileID: 7400020, guid: e14f663428ee41e4cb9bb638e3bccde5, type: 3}
+  - {fileID: 7400014, guid: e14f663428ee41e4cb9bb638e3bccde5, type: 3}
 --- !u!114 &271654026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,7 +1018,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.015686275, g: 0.81568635, b: 0.8196079, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1481,7 +1486,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upperMotionNameText: {fileID: 183027749}
   lowerMotionNameText: {fileID: 186676532}
-  clips: []
+  clips:
+  - {fileID: 7400000, guid: 26055e26f15260e4e8e0e51f50c41926, type: 3}
+  - {fileID: 7400000, guid: 842226a6a478847f9b6f5c746ae1cb95, type: 3}
+  - {fileID: 7400020, guid: edd51f298e7994c498b99bd24c098f52, type: 3}
+  - {fileID: 7400004, guid: e8397bfde2758f942a04edaaf7ad57ec, type: 3}
+  - {fileID: 7400006, guid: e8397bfde2758f942a04edaaf7ad57ec, type: 3}
 --- !u!114 &862610618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3232,7 +3242,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.015686275, g: 0.81568635, b: 0.8196079, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3639,7 +3649,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.015686275, g: 0.81568635, b: 0.8196079, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
