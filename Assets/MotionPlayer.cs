@@ -116,7 +116,7 @@ public class MotionPlayer : MonoBehaviour
 
         //再接続
         conv.reconnect(clip);
-        layerMixer.ConnectInput(layer, conv.mixer, 0);
+        layerMixer.ConnectInput(layer, conv.mixer, 0, 1f);
 
         //出力
         output.SetSourcePlayable(layerMixer);
